@@ -2,8 +2,6 @@
 import random
 random.seed(31337)
 
-# increase these symbolic constants when you implement
-# the associated Prisoner subclasses
 NUM_COOPERATOR = 2
 NUM_DEFECTOR = 2
 NUM_TITFORTAT = 2
@@ -174,12 +172,12 @@ class Dilemma:
     def play(self,player1,player2,num_games):
 
         # some Prisoner classes track information from game to game
-        # ensure this information is wiped clean at the start of each match
+        # This information is wiped clean at the start of each match
         player1.match_reset()
         player2.match_reset()
 
         # take note of each player's points at the start of each match
-        # so that we can calculate how many points were won/lost by both players
+        # to that we can calculate how many points were won/lost by both players
         player1_starting_score = player1.get_points()
         player2_starting_score = player2.get_points()
 
@@ -209,7 +207,7 @@ class Dilemma:
                     player1.update(False,self.both_coop_outcome)
                     player2.update(False,self.both_coop_outcome)
 
-        # compare the starting scores we noted to the ending scores and print
+        # compare the starting scores to the ending scores and print
         # a short description of the outcome
         player1_ending_score = player1.get_points()
         player2_ending_score = player2.get_points()
